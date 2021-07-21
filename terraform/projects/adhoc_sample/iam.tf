@@ -44,7 +44,7 @@ resource "aws_iam_policy" "s3_read_bucket_iam_policies" {
 # iam role
 resource "aws_iam_role" "databricks_role" {
   name               = "${local.resource_prefix}-databricks-role"
-  description        = "databricks cluster role for ${local.name}"
+  description        = "databricks cluster role for ${local.resource_prefix}"
   path               = "/"
   assume_role_policy = data.aws_iam_policy_document.instance_assume_role_policy.json
 }
